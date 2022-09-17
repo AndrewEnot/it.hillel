@@ -9,12 +9,13 @@ public class IsbnVerifier {
         Character[] charArrNew = new Character[charArr.length];
         Integer[] intArr = new Integer[charArr.length];
         int isbn = 0;
-        for (int i = 0; i < charArr.length; i++) {
+        for (int i = 0; i < charArrNew.length; i++) {
             charArrNew[i] = charArr[i];
-            if (charArr[i] == 'X') {
+            if (charArrNew[i] == 'X' && i == charArrNew.length - 1) {
                 intArr[i] = 10;
                 continue;
-            } else if (isDigit(charArrNew[i])) {
+            }
+            if (isDigit(charArrNew[i])) {
                 intArr[i] = Integer.parseInt(String.valueOf(charArr[i]));
                 continue;
             }
